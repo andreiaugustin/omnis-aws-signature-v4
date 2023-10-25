@@ -1,0 +1,5 @@
+If pRow.httpStatusCode=200
+	Calculate response_content as pRow.responseContent
+Else
+	Calculate response_content as chartoutf8(con(pRow.httpStatusCode,' ',pRow.log))
+End If

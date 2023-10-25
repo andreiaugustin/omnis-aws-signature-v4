@@ -1,0 +1,4 @@
+If aws_signature.$validref()
+	Quit method kTrue
+End If
+Quit method kFalse

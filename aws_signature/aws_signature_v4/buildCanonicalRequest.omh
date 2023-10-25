@@ -1,0 +1,8 @@
+# ************* TASK 1: CREATE A CANONICAL REQUEST *************
+# http://docs.aws.amazon.com/general/latest/gr/sigv4-create-canonical-request.html
+
+
+Calculate canonical_headers as con('host:',pHost,kLf,'x-amz-date:',pAmazonDate,kLf)
+Do method getSignedHeaders Returns signed_headers
+
+Quit method con(pMethod,kLf,pURI,kLf,pQuerystring,kLf,canonical_headers,kLf,signed_headers,kLf,pPayloadHash)

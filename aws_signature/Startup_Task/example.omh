@@ -1,0 +1,18 @@
+# Commented out; test is an object instance of aws_signature_v4 and api is an object instance of OW3 HTTP Worker
+# Calculate access_key as '...'
+# Calculate secret_key as '...'
+
+
+# Calculate payload as chartoutf8('{}')
+
+# Calculate host as '....eu-west-2.amazonaws.com'
+
+# Do test.$createSignatureHeaders(test.$method_POST(),host,payload,secret_key,access_key,'execute-api','','eu-west-2','/test','AWS4-HMAC-SHA256',error) Returns headers
+
+# Do headers.$add('Host',host)
+
+# Do api.$callbackinst.$assign($cinst)
+# Do api.$followredirects.$assign(kTrue)
+# Do api.$protocollog.$assign(kOW3logBasic+kOW3logData+kOW3logSecureData)
+# Do api.$init('....eu-west-2.amazonaws.com/test',kOW3httpMethodPost,headers,payload)
+# Do api.$run()

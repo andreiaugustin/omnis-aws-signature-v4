@@ -1,0 +1,8 @@
+# Enter your initialization code here
+Do $root.$modes.$getapiobject("aws_signature") Returns aws_signature
+
+Do method is_aws_signature_api_available Returns its_good
+
+If not(its_good)
+	Send to trace log (Always log) Could not retrieve AWS Signature object.
+End If

@@ -1,0 +1,15 @@
+
+
+Do fmtdatetime('yMDTHNSZ') Returns old_FDT_format
+Do getdatetime() Returns fdt
+Do loctoutc(fdt) Returns fdt
+Calculate pAmazonDate as fdt
+
+Do fmtdatetime('yMD')
+Do getdatetime() Returns fdt
+Calculate pDatestamp as fdt
+
+Do fmtdatetime(old_FDT_format)
+
+# Calculate pAmazonDate as '20220126T145305Z'
+# Calculate pDatestamp as '20220126'

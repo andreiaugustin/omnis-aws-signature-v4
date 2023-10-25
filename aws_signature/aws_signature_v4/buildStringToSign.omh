@@ -1,0 +1,5 @@
+# ************* TASK 2: CREATE THE STRING TO SIGN*************
+
+
+Do method buildCredentialScope (pDatestamp,pRegion,pService) Returns credential_scope
+Quit method con(pAlgorithm,kLf,pAmazonDate,kLf,credential_scope,kLf,pCanonicalRequestHash)

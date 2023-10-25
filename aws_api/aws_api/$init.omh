@@ -1,0 +1,46 @@
+Do method is_aws_signature_api_available Returns its_good
+If not(its_good)
+	Quit method kFalse
+End If
+
+If not(len(pEndpoint))
+	Send to trace log (Always log) Endpoint parameter cannot be empty.
+	Quit method kFalse
+End If
+Calculate endpoint as pEndpoint
+
+If not(len(pMethod))
+	Send to trace log (Always log) Method parameter cannot be empty.
+	Quit method kFalse
+End If
+Calculate method as pMethod
+
+Calculate payload as pPayload
+
+If not(len(pAccessKey))
+	Send to trace log (Always log) Access key parameter cannot be empty.
+	Quit method kFalse
+End If
+Calculate access_key as pAccessKey
+
+If not(len(pSecretKey))
+	Send to trace log (Always log) Secret key parameter cannot be empty.
+	Quit method kFalse
+End If
+Calculate secret_key as pSecretKey
+
+If not(len(pHost))
+	Send to trace log (Always log) Host parameter cannot be empty.
+	Quit method kFalse
+End If
+Calculate host as pHost
+
+Calculate uri as pURI
+
+Calculate service as pService
+
+Calculate querystring as pQuerystring
+
+Calculate region as pRegion
+
+Calculate algorithm as pAlgorithm

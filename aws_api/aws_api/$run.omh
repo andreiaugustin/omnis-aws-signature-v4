@@ -1,0 +1,32 @@
+
+If not(http.$validref())
+	Do $extobjects.OW3.$objects.HTTPClientWorker.$newref() Returns http
+	If not(http.$validref())
+		Send to trace log (Always log) Could not instantiate OW3 HTTP object.
+		Quit method kFalse
+	End If
+End If
+
+Do method is_aws_signature_api_available Returns its_good
+If not(its_good)
+	Send to trace log (Always log) Could not retrieve AWS Signature object.
+	Quit method kFalse
+End If
+
+Do aws_signature.$createSignatureHeaders(method,host,payload,secret_key,access_key,service,querystring,region,uri,algorithm) Returns headers
+Do headers.$add('Host',host)
+
+Do http.$callbackinst.$assign($cinst)
+Do http.$followredirects.$assign(kTrue)
+Do http.$protocollog.$assign(kOW3logBasic+kOW3logData+kOW3logSecureData)
+Switch method
+	Case 'POST'
+		Calculate http_method as kOW3httpMethodPost
+	Case 'GET'
+		Calculate http_method as kOW3httpMethodGet
+End Switch
+
+Do http.$init(endpoint,http_method,headers,payload)
+Do http.$run()
+
+Quit method response_content

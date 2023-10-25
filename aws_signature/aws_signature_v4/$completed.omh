@@ -1,0 +1,2 @@
+Calculate buffer_character as low(bintohex(pRow.data))
+Calculate buffer_binary as pRow.data

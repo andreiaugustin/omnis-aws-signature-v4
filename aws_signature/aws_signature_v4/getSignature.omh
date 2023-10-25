@@ -1,0 +1,15 @@
+# ************* TASK 3: CALCULATE THE SIGNATURE *************
+
+Do method sign (chartoutf8(con('AWS4',pSecretKey)),chartoutf8(pDatestamp)) ## Date
+
+Do method sign (buffer_binary,chartoutf8(pRegion)) ## Region
+
+Do method sign (buffer_binary,chartoutf8(pService)) ## Service
+
+Do method sign (buffer_binary,chartoutf8('aws4_request')) ## Signing
+
+# Build signature
+Do method sign (buffer_binary,chartoutf8(pStringToSign))
+Do method hexdigest (buffer_binary) Returns signature
+
+Quit method signature

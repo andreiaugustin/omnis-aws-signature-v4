@@ -1,0 +1,5 @@
+
+Do hasher.$callbackinst.$assign($cinst)
+Do hasher.$inithash(pMessage,kOW3hashSHA2_256,pKey)
+Do hasher.$run()
+Quit method buffer_binary

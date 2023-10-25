@@ -1,0 +1,25 @@
+
+If not(len(pAccessKey))&not(len(pSecretKey))
+	Calculate pError as 'No access or secret key is available'
+	Quit method
+End If
+
+
+Do method getDatestamps (amazon_date,datestamp)
+
+
+Do method sha256_hexdigest (pRequestPayload) Returns payload_hash
+Do method buildCanonicalRequest (pMethod,pURI,pQuerystring,pHost,amazon_date,payload_hash) Returns canonical_request
+
+Do method sha256_hexdigest (chartoutf8(canonical_request)) Returns canonical_request_hash
+Do method buildStringToSign (pAlgorithm,amazon_date,datestamp,pRegion,pService,canonical_request_hash) Returns string_to_sign
+
+Do method getSignature (pSecretKey,datestamp,pRegion,pService,string_to_sign) Returns signature
+
+Do method buildAuthorizationHeader (pAlgorithm,datestamp,pAccessKey,pService,pRegion,signature) Returns authorization_header
+
+Do headers.$define('','')
+Do headers.$add('X-Amz-Date',amazon_date)
+Do headers.$add('Authorization',authorization_header)
+
+Quit method headers

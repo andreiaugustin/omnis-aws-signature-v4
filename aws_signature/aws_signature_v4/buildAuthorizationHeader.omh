@@ -1,0 +1,3 @@
+Do method buildCredentialScope (pDatestamp,pRegion,pService) Returns credential_scope
+Do method getSignedHeaders Returns signed_headers
+Quit method con(pAlgorithm,' ','Credential=',pAccessKey,'/',credential_scope,', SignedHeaders=',signed_headers,', Signature=',pSignature)
